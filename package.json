@@ -5,7 +5,8 @@
   "description": "Fork of https://github.com/mahsu/MariOCaml, compiled using BuckleScript instead of js_of_ocaml",
   "main": "index.js",
   "scripts": {
-    "start": "bsb -w",
+    "start": "webpack-dev-server --open",
+    "prestart": "bsb",
     "clean": "bsb -clean-world",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack-for-es6-less-browsers": "rollup --input ./lib/es6_global/src/Main.js --format iife --output docs/all.js"
@@ -23,6 +24,9 @@
   "homepage": "https://github.com/reasonml-community/Mareo#readme",
   "devDependencies": {
     "bs-platform": "^2.2.2",
-    "rollup": "^0.43.0"
+    "rollup": "^0.43.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.1"
   }
 }
